@@ -17,4 +17,16 @@ class Piloto extends Model
         'image',
         'escuderia_id'
     ];
+
+    public function escuderia() {
+        return $this->belongsTo(Escuderia::class);
+    }
+
+    public function carreras() {
+        return $this->belongsToMany(Carrera::class);
+    }
+
+    public function resultados() {
+        return $this->hasMany(Resultado::class);
+    }
 }

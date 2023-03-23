@@ -15,4 +15,12 @@ class Carrera extends Model
         'image',
         'piloto_id'
     ];
+
+    public function pilotos() {
+        return $this->belongsToMany(Piloto::class);
+    }
+
+    public  function resultados() {
+        return $this->hasMany(Resultado::class);
+    }
 }

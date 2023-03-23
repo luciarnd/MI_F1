@@ -15,4 +15,8 @@ class Escuderia extends Model
         'motorUsado',
         'image'
     ];
+
+    public function pilotos() {
+        return $this->hasMany(Piloto::class);
+    }
 }

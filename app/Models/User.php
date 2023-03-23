@@ -22,4 +22,12 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function role() {
+        return $this->hasOne(Role::class);
+    }
+
+    public function pedidos() {
+        return $this->hasMany(Pedido::class);
+    }
+
 }

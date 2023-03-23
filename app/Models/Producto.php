@@ -15,4 +15,12 @@ class Producto extends Model
         'image_id',
         'descripcion'
     ];
+
+    public function detallePedidos() {
+        return $this->belongsToMany(Producto::class);
+    }
+
+    public function images() {
+        return $this->hasMany(Image::class);
+    }
 }

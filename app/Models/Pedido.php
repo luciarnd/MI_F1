@@ -18,4 +18,12 @@ class Pedido extends Model
         'zip',
         'personaReceptora'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function detallePedido() {
+        return $this->hasOne(DetallePedido::class);
+    }
 }

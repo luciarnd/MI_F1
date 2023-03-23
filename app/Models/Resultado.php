@@ -14,4 +14,13 @@ class Resultado extends Model
         'piloto_id',
         'puntosObtenidos'
     ];
+
+    public function piloto() {
+        $this->belongsTo(Piloto::class);
+    }
+
+    public function carrera()
+    {
+        $this->belongsTo(Carrera::class);
+    }
 }

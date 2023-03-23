@@ -16,4 +16,13 @@ class DetallePedido extends Model
         'producto_id',
         'cantidad'
     ];
+
+    public function pedido() {
+        return $this->belongsTo(Pedido::class);
+    }
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
+    }
 }
