@@ -16,8 +16,8 @@ class Carrera extends Model
         'piloto_id'
     ];
 
-    public function pilotos() {
-        return $this->belongsToMany(Piloto::class);
+    public function piloto() {
+        return $this->belongsTo(Piloto::class);
     }
 
     public  function resultados() {

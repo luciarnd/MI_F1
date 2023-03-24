@@ -28,7 +28,7 @@ class PilotoController extends Controller
             'apellido' => 'required|string',
             'pais' => 'required|string',
             'numCoche' => 'required|string',
-            'escuderia_id' => 'required|string',
+            'escuderia_id' => 'required|int',
             'image' => 'required'
         ]);
 

@@ -23,7 +23,7 @@ class Piloto extends Model
     }
 
     public function carreras() {
-        return $this->belongsToMany(Carrera::class);
+        return $this->hasMany(Carrera::class);
     }
 
     public function resultados() {

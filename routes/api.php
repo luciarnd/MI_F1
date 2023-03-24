@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
 use App\Http\Controllers\RoleController;
@@ -34,3 +35,9 @@ Route::get('piloto/{id}', [PilotoController::class, 'show']);
 Route::get('pilotos', [PilotoController::class, 'index']);
 Route::put('piloto/{id}', [PilotoController::class, 'update']);
 Route::delete('piloto/{id}', [PilotoController::class, 'delete']);
+
+Route::post('carrera', [CarreraController::class, 'store']);
+Route::get('carrera/{id}', [CarreraController::class, 'show']);
+Route::get('carreras', [CarreraController::class, 'index']);
+Route::put('carrera/{id}', [CarreraController::class, 'update']);
+Route::delete('carrera/{id}', [CarreraController::class, 'delete']);
