@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
+use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,3 +42,9 @@ Route::get('carrera/{id}', [CarreraController::class, 'show']);
 Route::get('carreras', [CarreraController::class, 'index']);
 Route::put('carrera/{id}', [CarreraController::class, 'update']);
 Route::delete('carrera/{id}', [CarreraController::class, 'delete']);
+
+Route::post('resultado', [ResultadoController::class, 'store']);
+Route::get('resultados', [ResultadoController::class, 'index']);
+Route::get('resultados/carrera/{id}', [ResultadoController::class, 'showByCarrera']);
+Route::put('resultado/{id}', [ResultadoController::class, 'update']);
+Route::delete('resultado/{id}', [ResultadoController::class, 'delete']);

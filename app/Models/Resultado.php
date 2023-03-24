@@ -16,11 +16,11 @@ class Resultado extends Model
     ];
 
     public function piloto() {
-        $this->belongsTo(Piloto::class);
+        return $this->belongsTo(Piloto::class);
     }
 
     public function carrera()
     {
-        $this->belongsTo(Carrera::class);
+        return $this->belongsTo(Carrera::class);
     }
 }
