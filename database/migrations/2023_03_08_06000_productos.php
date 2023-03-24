@@ -18,12 +18,8 @@ return new class extends Migration
             $table->double('precio');
             $table->string('marca');
             $table->string('nombre');
-            $table->bigInteger('image_id')->unsigned();
             $table->string('descripcion');
-            $table->foreign('image_id')
-                ->references('id')
-                ->on('images')
-                ->onDelete('cascade');
+            $table->bigInteger('stock');
             $table->timestamps();
         });
     }

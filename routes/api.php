@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EscuderiaController;
+use App\Http\Controllers\PilotoController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,9 @@ Route::get('escuderia/{id}', [EscuderiaController::class, 'show']);
 Route::get('escuderias', [EscuderiaController::class, 'index']);
 Route::put('escuderia/{id}', [EscuderiaController::class, 'update']);
 Route::delete('escuderia/{id}', [EscuderiaController::class, 'delete']);
+
+Route::post('piloto', [PilotoController::class, 'store']);
+Route::get('piloto/{id}', [PilotoController::class, 'show']);
+Route::get('pilotos', [PilotoController::class, 'index']);
+Route::put('piloto/{id}', [PilotoController::class, 'update']);
+Route::delete('piloto/{id}', [PilotoController::class, 'delete']);
