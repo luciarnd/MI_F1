@@ -14,7 +14,6 @@ return new class extends Migration
     public function up()
     {
         Schema::create('resultados', function (Blueprint $table) {
-            $table->id();
             $table->bigInteger('carrera_id')->unsigned();
             $table->bigInteger('piloto_id')->unsigned();
             $table->bigInteger('puntosObtenidos')->default(0);

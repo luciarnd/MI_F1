@@ -5,7 +5,6 @@ use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\RoleController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*

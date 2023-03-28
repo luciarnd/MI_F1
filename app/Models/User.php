@@ -30,4 +30,8 @@ class User extends Authenticatable
         return $this->hasMany(Pedido::class);
     }
 
+    public function carrito() {
+        return $this->hasOne(Carrito::class);
+    }
+
 }

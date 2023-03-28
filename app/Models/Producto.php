@@ -23,4 +23,8 @@ class Producto extends Model
     public function images() {
         return $this->hasMany(Image::class);
     }
+
+    public function carritos() {
+        return $this->belongsToMany(Carrito::class);
+    }
 }
