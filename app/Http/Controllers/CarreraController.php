@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Validator;
 
 class CarreraController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
+
     public function index() {
         return Carrera::with('piloto')->get();
     }

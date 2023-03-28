@@ -10,7 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class PilotoController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index','show']]);
+    }
     public function index() {
         return Piloto::with('escuderia')->get();
     }

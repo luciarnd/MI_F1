@@ -6,6 +6,7 @@ use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,3 +56,9 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
 Route::get('me', [AuthController::class, 'me']);
+
+Route::post('usuario', [UserController::class, 'store']);
+Route::get('usuario/{id}', [UserController::class, 'show']);
+Route::get('usuarios', [UserController::class, 'index']);
+Route::put('usuario/{id}', [UserController::class, 'update']);
+Route::delete('usuario/{id}', [UserController::class, 'delete']);

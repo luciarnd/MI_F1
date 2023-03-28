@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class ResultadoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index','showByCarrera']]);
+    }
+
     public function index() {
         return Resultado::with(['piloto', 'carrera'])->get();
     }
