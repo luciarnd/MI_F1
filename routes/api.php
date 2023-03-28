@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
@@ -47,3 +48,10 @@ Route::get('resultados', [ResultadoController::class, 'index']);
 Route::get('resultados/carrera/{id}', [ResultadoController::class, 'showByCarrera']);
 Route::put('resultado/{id}', [ResultadoController::class, 'update']);
 Route::delete('resultado/{id}', [ResultadoController::class, 'delete']);
+
+
+Route::post('login', [AuthController::class, 'login']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('logout', [AuthController::class, 'logout']);
+Route::post('refresh', [AuthController::class, 'refresh']);
+Route::get('me', [AuthController::class, 'me']);
