@@ -4,21 +4,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\PilotoController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
 Route::post('rol', [RoleController::class, 'store']);
 Route::get('rol/{id}', [RoleController::class, 'show']);
@@ -62,3 +52,9 @@ Route::get('usuario/{id}', [UserController::class, 'show']);
 Route::get('usuarios', [UserController::class, 'index']);
 Route::put('usuario/{id}', [UserController::class, 'update']);
 Route::delete('usuario/{id}', [UserController::class, 'delete']);
+
+Route::post('producto', [ProductoController::class, 'store']);
+Route::get('producto/{id}', [ProductoController::class, 'show']);
+Route::get('productos', [ProductoController::class, 'index']);
+Route::put('producto/{id}', [ProductoController::class, 'update']);
+Route::delete('producto/{id}', [ProductoController::class, 'delete']);

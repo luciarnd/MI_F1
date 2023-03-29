@@ -12,8 +12,8 @@ class Producto extends Model
         'precio',
         'marca',
         'nombre',
-        'image_id',
-        'descripcion'
+        'descripcion',
+        'stock'
     ];
 
     public function detallePedidos() {
