@@ -16,8 +16,8 @@ class Producto extends Model
         'stock'
     ];
 
-    public function detallePedidos() {
-        return $this->belongsToMany(Producto::class);
+    public function pedido() {
+        return $this->belongsToMany(Pedido::class);
     }
 
     public function images() {

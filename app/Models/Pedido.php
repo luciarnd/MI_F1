@@ -23,7 +23,7 @@ class Pedido extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function detallePedido() {
-        return $this->hasOne(DetallePedido::class);
+    public function productos() {
+        return $this->belongsToMany(Producto::class)->withPivot('cantidad');
     }
 }
