@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PilotoController;
@@ -62,3 +63,9 @@ Route::delete('producto/{id}', [ProductoController::class, 'delete']);
 
 Route::post('image/{id}', [ImageController::class, 'update']);
 Route::delete('image/{id}', [ImageController::class, 'delete']);
+
+Route::post('carrito', [CarritoController::class, 'store']);
+Route::get('carrito', [CarritoController::class, 'indexByUser']);
+Route::post('carrito/{producto}/', [CarritoController::class, 'update']);
+Route::delete('carrito/{producto}', [CarritoController::class, 'deleteProducto']);
+Route::delete('carrito/', [CarritoController::class, 'deleteCarrito']);

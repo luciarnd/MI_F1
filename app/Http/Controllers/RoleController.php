@@ -8,10 +8,6 @@ use Illuminate\Support\Facades\Validator;
 
 class RoleController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
 
     public function index() {
         return Role::all();
