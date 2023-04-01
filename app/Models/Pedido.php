@@ -13,7 +13,6 @@ class Pedido extends Model
         'user_id',
         'direccion',
         'fecha',
-        'precio_total',
         'localidad',
         'zip',
         'personaReceptora'
@@ -24,6 +23,6 @@ class Pedido extends Model
     }
 
     public function productos() {
-        return $this->belongsToMany(Producto::class)->withPivot('cantidad');
+        return $this->hasMany(Producto::class);
     }
 }

@@ -17,7 +17,7 @@ class Producto extends Model
     ];
 
     public function pedido() {
-        return $this->belongsToMany(Pedido::class);
+        return $this->hasOne(Pedido::class);
     }
 
     public function images() {

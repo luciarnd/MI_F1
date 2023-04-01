@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->string('direccion');
             $table->string('fecha');
-            $table->double('precio_total');
+            $table->double('precio_total')->nullable();
             $table->string('localidad');
             $table->string('zip');
             $table->string('personaReceptora');

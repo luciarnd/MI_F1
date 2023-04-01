@@ -5,6 +5,7 @@ use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\EscuderiaController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\PilotoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ResultadoController;
@@ -69,3 +70,9 @@ Route::get('carrito', [CarritoController::class, 'indexByUser']);
 Route::post('carrito/{producto}/', [CarritoController::class, 'update']);
 Route::delete('carrito/{producto}', [CarritoController::class, 'deleteProducto']);
 Route::delete('carrito/', [CarritoController::class, 'deleteCarrito']);
+
+Route::post('pedido', [PedidoController::class, 'store']);
+Route::get('mispedidos', [PedidoController::class, 'indexByUser']);
+Route::get('pedidos', [PedidoController::class, 'index']);
+Route::put('pedido/{id}/', [PedidoController::class, 'update']);
+Route::delete('pedido/{id}', [PedidoController::class, 'delete']);
