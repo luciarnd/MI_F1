@@ -20,10 +20,12 @@ return new class extends Migration
             $table->primary(['carrera_id', 'piloto_id']);
             $table->foreign('carrera_id')
                 ->references('id')
-                ->on('carreras');
+                ->on('carreras')
+                ->onDelete('cascade');
             $table->foreign('piloto_id')
                 ->references('id')
-                ->on('pilotos');
+                ->on('pilotos')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

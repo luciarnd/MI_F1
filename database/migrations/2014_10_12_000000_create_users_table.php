@@ -21,7 +21,8 @@ return new class extends Migration
             $table->bigInteger('role_id')->unsigned();
             $table->foreign('role_id')
                 ->references('id')
-                ->on('roles');
+                ->on('roles')
+                ->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
