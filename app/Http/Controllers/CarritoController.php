@@ -63,4 +63,16 @@ class CarritoController extends Controller
         $carrito = Carrito::where('user_id', '=', $user);
         $carrito->delete();
     }
+
+    public function getCantidadCarrito() {
+        $user = Auth::user();
+        $carrito = Carrito::where('user_id', '=', $user->id)->get();
+        $cantidadEnCarrito = 0;
+
+        foreach ($carrito as $prod) {
+            $cantidadEnCarrito += $prod->cantidad;
+        }
+
+        return response()->json([$cantidadEnCarrito], 200);
+    }
 }

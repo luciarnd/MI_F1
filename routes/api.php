@@ -70,6 +70,7 @@ Route::get('carrito', [CarritoController::class, 'indexByUser']);
 Route::post('carrito/{producto}/', [CarritoController::class, 'update']);
 Route::delete('carrito/{producto}', [CarritoController::class, 'deleteProducto']);
 Route::delete('carrito/', [CarritoController::class, 'deleteCarrito']);
+Route::get('cantidadCarrito', [CarritoController::class, 'getCantidadCarrito']);
 
 Route::post('pedido', [PedidoController::class, 'store']);
 Route::get('mispedidos', [PedidoController::class, 'indexByUser']);
