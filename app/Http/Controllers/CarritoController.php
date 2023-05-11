@@ -38,8 +38,12 @@ class CarritoController extends Controller
         $carrito = new Carrito($input);
         $user = Auth::user();
         $carrito->user_id = $user->id;
-        $carrito->save();
-        return response()->json(['success' => 'Carrito guardado con exito', 'carrito' => $carrito], 200);
+        try {
+            $carrito->save();
+            return response()->json(['success' => 'Producto añadido a la cesta', 'carrito' => $carrito], 200);
+        } catch (\Throwable $exception) {
+            return response()->json(['error' => 'Este producto ya está en tu carrito', 'carrito' => $carrito], 400);
+        }
     }
 
     public function update(Request $request, Producto $producto) {
