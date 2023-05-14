@@ -21,8 +21,8 @@ class ResultadoController extends Controller
     }
 
     public function showByCarrera($id) {
-        $resultados = Resultado::with(['piloto', 'carrera'])->get();
-        $resultadosCarrera = $resultados->where('carrera_id', '=', $id);
+        $resultados = Resultado::with(['piloto', 'carrera']);
+        $resultadosCarrera = $resultados->where('carrera_id', '=', $id)->orderBy('puntosObtenidos', 'desc')->get();
 
         return response()->json(['resultados' => $resultadosCarrera], 200);
     }
