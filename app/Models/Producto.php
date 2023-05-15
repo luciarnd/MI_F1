@@ -16,8 +16,8 @@ class Producto extends Model
         'stock'
     ];
 
-    public function pedido() {
-        return $this->hasOne(Pedido::class);
+    public function pedidos(){
+        return $this->belongsToMany(Pedido::class)->withTimestamps();
     }
 
     public function images() {

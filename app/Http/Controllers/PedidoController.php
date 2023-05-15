@@ -27,10 +27,12 @@ class PedidoController extends Controller
     public function indexByUser() {
         $user = Auth::user()->id;
         $pedidos = Pedido::where('user_id', '=', $user)->get();
+        $misPedidosConProducto = [];
         foreach ($pedidos as $pedido) {
-            $pedido->productos = DetallePedido::where('pedido_id', '=', $pedido->id)->get();
+            $pedido->productos;
+            $misPedidosConProducto[] = $pedido;
         }
-        return response()->json(['pedidos' => $pedidos]);
+        return $misPedidosConProducto;
     }
     public function show($id) {
         $pedido = Pedido::findOrFail($id);
