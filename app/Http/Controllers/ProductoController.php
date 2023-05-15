@@ -39,8 +39,6 @@ class ProductoController extends Controller
             return response()->json(['error' => 'Hubo un error al almacenar el producto.'], 500);
         }
 
-        $input = $request->all();
-
         $producto = Producto::create([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
@@ -49,17 +47,18 @@ class ProductoController extends Controller
             'precio' => $request->precio
         ]);
         $producto->save();
+        $length = $request->length;
 
-        if($files = $request->images) {
-            foreach ($files as $file) {
-                $name = $file->getClientOriginalName();
-                Storage::put('public/productos/' . $name, file_get_contents($file->getRealPath()));
-                $image = new Image();
-                $image->nombre = $name;
-                $image->producto_id = $producto->id;
-                $image->save();
-            }
+        for ($i=0; $i < $length; $i++) {
+            $img[$i] = $request->file('images'.$i);
+            $name = $img[$i]->getClientOriginalName();
+            Storage::put('public/productos/' . $name, file_get_contents($img[$i]->getRealPath()));
+            $image = new Image();
+            $image->nombre = $name;
+            $image->producto_id = $producto->id;
+            $image->save();
         }
+
         return response()->json(['success' => 'Producto guardado con exito', 'producto' => $producto], 200);
     }
 
