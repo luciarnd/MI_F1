@@ -13,6 +13,7 @@ class Carrera extends Model
         'nombreCircuito',
         'descripcionCircuito',
         'image',
+        'nombre',
         'piloto_id'
     ];
 

@@ -30,6 +30,7 @@ class CarreraController extends Controller
             'nombreCircuito' => 'required|string',
             'descripcionCircuito' => 'required|string',
             'piloto_id' => 'required|int',
+            'nombre' => 'required|string',
             'image' => 'required'
         ]);
 
