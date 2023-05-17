@@ -40,8 +40,8 @@ Route::delete('carrera/{id}', [CarreraController::class, 'delete']);
 Route::post('resultado', [ResultadoController::class, 'store']);
 Route::get('resultados', [ResultadoController::class, 'index']);
 Route::get('resultados/carrera/{id}', [ResultadoController::class, 'showByCarrera']);
-Route::put('resultado/{id}', [ResultadoController::class, 'update']);
-Route::delete('resultado/{id}', [ResultadoController::class, 'delete']);
+Route::post('resultado/{carreraId}/{pilotoId}', [ResultadoController::class, 'update']);
+Route::delete('resultado/{carreraId}/{pilotoId}', [ResultadoController::class, 'delete']);
 
 
 Route::post('login', [AuthController::class, 'login']);
