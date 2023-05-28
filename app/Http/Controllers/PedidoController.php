@@ -49,10 +49,9 @@ class PedidoController extends Controller
         ]);
 
         if($validate->fails()) {
-            return response()->json(['error' => 'Hubo un error al hacer el producto.'], 500);
+            return response()->json(['error' => 'Hubo un error al hacer el pedido.'], 500);
         }
 
-        $input = $request->all();
         $user = Auth::user()->id;
 
         $pedido = Pedido::create([

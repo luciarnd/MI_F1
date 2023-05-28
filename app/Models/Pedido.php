@@ -15,7 +15,8 @@ class Pedido extends Model
         'fecha',
         'localidad',
         'zip',
-        'personaReceptora'
+        'personaReceptora',
+        'estado'
     ];
 
     public function user() {
